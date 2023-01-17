@@ -23,7 +23,6 @@ const StyledWarningIcon = styled(WarningIcon)`
 
 export const ErrorPage: FC = () => {
   const error = useRouteError() as routeError;
-  console.dir({ error });
 
   return (
     <Container

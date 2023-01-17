@@ -12,20 +12,33 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ThemeProvider } from '@mui/material';
 import { appTheme } from './mui/appTheme';
+import { SignIn } from './pages/SignIn';
+import RequireAuth from './hoc/RequireAuth';
+import { AuthProvider } from './hoc/AuthProvider';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
+    element: (
+      <RequireAuth>
+        <Root />
+      </RequireAuth>
+    ),
     errorElement: <ErrorPage />,
     children: [],
+  },
+  {
+    path: '/signin',
+    element: <SignIn />,
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={appTheme}>
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -5,6 +5,11 @@
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 *::after,
 *::before {
   box-sizing: inherit;
