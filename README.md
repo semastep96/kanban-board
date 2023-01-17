@@ -4,3 +4,4 @@
   - TypeScript;
   - React;
   - React router v6;
+  - Material UI
