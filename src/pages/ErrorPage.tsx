@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from '@mui/material';
+import { Button, Container, styled, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { useRouteError } from 'react-router-dom';
 import WarningIcon from '@mui/icons-material/Warning';
@@ -8,6 +8,18 @@ interface routeError {
   statusText: string;
   message: string;
 }
+
+const StyledWarningIcon = styled(WarningIcon)`
+  ${({ theme }) => `
+  transition: ${theme.transitions.create(['transform'], {
+    duration: '1s',
+    easing: theme.transitions.easing.easeInOut,
+  })};
+  &:hover {
+    transform: scale(1.8);
+  }
+  `}
+`;
 
 export const ErrorPage: FC = () => {
   const error = useRouteError() as routeError;
@@ -24,7 +36,7 @@ export const ErrorPage: FC = () => {
       }}
       maxWidth={'md'}
     >
-      <WarningIcon
+      <StyledWarningIcon
         color={'error'}
         sx={{ fontSize: '100px', marginBottom: '1rem' }}
       />
