@@ -16,6 +16,10 @@ export const SignIn: FC = () => {
   const { user, signin } = useAuth();
   const navigate = useNavigate();
 
+  if (user) {
+    return <Navigate to={'/'}></Navigate>;
+  }
+
   const formik = useFormik({
     initialValues: {
       username: '',
@@ -33,10 +37,6 @@ export const SignIn: FC = () => {
       );
     },
   });
-
-  if (user) {
-    return <Navigate to={'/'}></Navigate>;
-  }
 
   return (
     <form onSubmit={formik.handleSubmit}>
