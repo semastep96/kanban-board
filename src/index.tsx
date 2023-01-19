@@ -26,7 +26,12 @@ const router = createBrowserRouter([
       </RequireAuth>
     ),
     errorElement: <ErrorPage />,
-    children: [],
+    children: [
+      {
+        path: 'boards',
+        element: <h1>My boards</h1>
+      }
+    ],
   },
   {
     path: '/signin',
