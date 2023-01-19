@@ -16,6 +16,7 @@ import { SignIn } from './pages/SignIn';
 import RequireAuth from './hoc/RequireAuth';
 import { AuthProvider } from './hoc/AuthProvider';
 import { SignUp } from './pages/SignUp';
+import { Boards } from './pages/Boards';
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'boards',
-        element: <h1>My boards</h1>
+        element: <Boards />
       }
     ],
   },
