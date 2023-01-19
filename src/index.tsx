@@ -17,6 +17,7 @@ import RequireAuth from './hoc/RequireAuth';
 import { AuthProvider } from './hoc/AuthProvider';
 import { SignUp } from './pages/SignUp';
 import { Boards } from './pages/Boards';
+import { Board } from './pages/Board';
 
 const router = createBrowserRouter([
   {
@@ -30,8 +31,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'boards',
-        element: <Boards />
-      }
+        element: <Boards />,
+      },
+      { path: 'boards/:boardId', element: <Board /> },
     ],
   },
   {
@@ -40,7 +42,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/signup',
-    element: <SignUp />
+    element: <SignUp />,
   },
 ]);
 

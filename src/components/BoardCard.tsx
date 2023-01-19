@@ -1,11 +1,18 @@
 import { Card, CardActionArea, Typography } from '@mui/material';
 import React, { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface BoardCardProps {
   board: Board;
 }
 
 export const BoardCard: FC<BoardCardProps> = ({ board }) => {
+  const navigate = useNavigate();
+
+  const handleCardClick: React.MouseEventHandler<HTMLButtonElement> = () => {
+    navigate(board.id);
+  };
+
   return (
     <Card
       sx={{
@@ -18,6 +25,7 @@ export const BoardCard: FC<BoardCardProps> = ({ board }) => {
       }}
     >
       <CardActionArea
+        onClick={handleCardClick}
         sx={{
           height: '100%',
           padding: '15px',

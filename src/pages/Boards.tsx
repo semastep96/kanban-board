@@ -3,7 +3,7 @@ import { Container } from '@mui/system';
 import React, { FC } from 'react';
 import { BoardCard } from '../components/BoardCard';
 
-const boards: Board[] = [
+export const boards: Board[] = [
   {
     id: 'b1',
     name: 'My Kanban board 1',
