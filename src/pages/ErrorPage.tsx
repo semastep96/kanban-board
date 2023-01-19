@@ -11,6 +11,9 @@ interface routeError {
 
 const StyledWarningIcon = styled(WarningIcon)`
   ${({ theme }) => `
+  color: ${theme.palette.error.main};
+  font-size: ${'100px'};
+  margin: ${'1rem'};
   transition: ${theme.transitions.create(['transform'], {
     duration: '1s',
     easing: theme.transitions.easing.easeInOut,
@@ -35,14 +38,16 @@ export const ErrorPage: FC = () => {
       }}
       maxWidth={'md'}
     >
-      <StyledWarningIcon
-        color={'error'}
-        sx={{ fontSize: '100px', marginBottom: '1rem' }}
-      />
+      <StyledWarningIcon />
       <Typography variant={'h1'} component={'h1'} mb={'1.5rem'}>
         Oops!
       </Typography>
-      <Typography variant="h5" component={'h2'} mb={'1rem'}>
+      <Typography
+        variant="h5"
+        component={'h2'}
+        mb={'1rem'}
+        textAlign={'center'}
+      >
         Sorry, an unexpected error has occurred.
       </Typography>
       <Typography variant={'h6'} component={'p'}>

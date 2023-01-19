@@ -18,13 +18,24 @@ export const TopBar: FC = () => {
   const handleSignout = () => {
     signout(() => navigate('/signin'));
   };
-  
   return (
-    <AppBar position="sticky" sx={{ marginBottom: '1.5rem' }}>
+    <AppBar position="sticky">
       <Toolbar variant="dense">
-        <Typography variant="h6" color="inherit" component="div" sx={{backgroundColor: 'rgba(0,0,0, 0.2)', borderRadius: '15px', padding: '10px 20px'}}>
-          <Link to={'/'}>{'Kanban Boards App'}</Link>
-        </Typography>
+        <Link to={'/'}>
+          <Typography
+            variant="h6"
+            color="inherit"
+            component="div"
+            sx={{
+              backgroundColor: 'rgba(0,0,0, 0.2)',
+              borderRadius: '15px',
+              padding: '10px 20px',
+              fontSize: { xs: '15px', sm: '1.25rem' },
+            }}
+          >
+            {'Kanban Boards App'}
+          </Typography>
+        </Link>
         <Box sx={{ marginLeft: 'auto', display: 'flex', alignItems: 'center' }}>
           <Typography
             variant="subtitle1"
