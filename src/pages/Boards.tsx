@@ -11,7 +11,6 @@ export const boards: Board[] = [
     lastOpen: '2023-01-01T01:30:00',
     backgroundImg:
       'https://img.freepik.com/free-photo/gray-kitty-with-monochrome-wall-behind-her_23-2148955130.jpg?w=2000',
-    backgroundColor: 'red',
     columns: [
       {
         id: 'b1c1',
@@ -45,7 +44,6 @@ export const boards: Board[] = [
     lastOpen: '2023-01-01T02:30:00',
     backgroundImg:
       'https://img.freepik.com/free-vector/pastel-ombre-background-pink-purple_53876-120750.jpg?w=2000',
-    backgroundColor: 'red',
     columns: [
       {
         id: 'b2c1',
@@ -165,7 +163,7 @@ export const Boards: FC = () => {
             All Boards
           </Typography>
         </Grid>
-        <Grid item xs={12}md={6} lg={4}>
+        <Grid item xs={12} md={6} lg={4}>
           <CreateBoardCard />
         </Grid>
         {boards.map((board) => (

@@ -18,6 +18,5 @@ interface Board {
   name: string;
   lastOpen: string;
   backgroundImg?: string;
-  backgroundColor?: string;
   columns: Column[];
 }
