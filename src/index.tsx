@@ -33,6 +33,10 @@ const router = createBrowserRouter([
         path: 'boards',
         element: <Boards />,
       },
+      {
+        path: 'boards/new',
+        element: <h1>Create new board page</h1>
+      },
       { path: 'boards/:boardId', element: <Board /> },
     ],
   },

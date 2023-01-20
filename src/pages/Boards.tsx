@@ -2,6 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { FC } from 'react';
 import { BoardCard } from '../components/BoardCard';
+import { CreateBoardCard } from '../components/CreateBoardCard';
 
 export const boards: Board[] = [
   {
@@ -163,6 +164,9 @@ export const Boards: FC = () => {
           <Typography variant="h4" textAlign={'center'}>
             All Boards
           </Typography>
+        </Grid>
+        <Grid item xs={12}md={6} lg={4}>
+          <CreateBoardCard />
         </Grid>
         {boards.map((board) => (
           <Grid item xs={12} md={6} lg={4} key={board.id}>
