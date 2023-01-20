@@ -1,8 +1,6 @@
-import { Grid, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import React, { FC } from 'react';
-import { BoardCard } from '../components/BoardCard';
-import { CreateBoardCard } from '../components/CreateBoardCard';
+import { BoardCards } from '../components/BoardCards';
 
 export const boards: Board[] = [
   {
@@ -143,35 +141,11 @@ export const Boards: FC = () => {
     })
     .reverse()
     .slice(0, 3);
+
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={3} mt="0.5rem" mb={'2rem'}>
-        <Grid item xs={12}>
-          <Typography variant="h4" textAlign={'center'}>
-            Recently watched
-          </Typography>
-        </Grid>
-        {lastThreeBoards.map((board) => (
-          <Grid item xs={12} md={6} lg={4} key={board.id}>
-            <BoardCard board={board} />
-          </Grid>
-        ))}
-      </Grid>
-      <Grid container spacing={3} marginBottom="2rem">
-        <Grid item xs={12}>
-          <Typography variant="h4" textAlign={'center'}>
-            All Boards
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={6} lg={4}>
-          <CreateBoardCard />
-        </Grid>
-        {boards.map((board) => (
-          <Grid item xs={12} md={6} lg={4} key={board.id}>
-            <BoardCard board={board} />
-          </Grid>
-        ))}
-      </Grid>
+      <BoardCards title="Recently watched boards" boards={lastThreeBoards} />
+      <BoardCards title="All boards" boards={boards} CardCreator />
     </Container>
   );
 };
