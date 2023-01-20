@@ -8,7 +8,7 @@ import { useScrollToTop } from '../hooks/useScrollToTop';
 export const Root: FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  
+
   useEffect(() => {
     if (location.pathname === '/') {
       navigate('/boards');
@@ -19,7 +19,7 @@ export const Root: FC = () => {
   return (
     <div className="App">
       <TopBar />
-      <Box sx={{ p: '1rem 24px 2rem', minHeight: '100%' }}>
+      <Box sx={{ pb: '2rem', height: '100%', overflow: 'scroll' }}>
         <Outlet />
       </Box>
       <Footer />

@@ -4,7 +4,7 @@ import { useAuth } from '../hooks/useAuth';
 import { Container } from '@mui/material';
 
 import { useScrollToTop } from '../hooks/useScrollToTop';
-import { SignupFormProps, SignupFrom } from '../components/forms/SignupFrom';
+import { SignupFormProps, SignupFrom } from '../components/forms/SignupForm';
 
 export const SignUp: FC = () => {
   const { user } = useAuth();

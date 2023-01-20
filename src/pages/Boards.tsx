@@ -147,7 +147,7 @@ export const Boards: FC = () => {
     .slice(0, 3);
   return (
     <Container maxWidth="xl">
-      <Grid container spacing={3} marginY="2rem">
+      <Grid container spacing={3} mt="0.5rem" mb={'2rem'}>
         <Grid item xs={12}>
           <Typography variant="h4" textAlign={'center'}>
             Recently watched

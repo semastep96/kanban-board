@@ -83,6 +83,7 @@ export const SignupFrom: FC<SignupFormProps> = ({ onSubmit }) => {
           formik.touched.passwordRepeat && Boolean(formik.errors.passwordRepeat)
         }
         helperText={formik.touched.password && formik.errors.passwordRepeat}
+        margin="normal"
         sx={{ marginBottom: '20px' }}
       />
       <Button
