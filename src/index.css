@@ -5,6 +5,13 @@
   text-decoration: none;
 }
 
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
 img {
   display: block;
   width: 100%;

@@ -15,11 +15,13 @@ import { Link } from 'react-router-dom';
 export const TopBar: FC = () => {
   const navigate = useNavigate();
   const { user, signout } = useAuth();
+
   const handleSignout = () => {
     signout(() => navigate('/signin'));
   };
+  
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{height: '5rem'}}>
       <Toolbar variant="dense">
         <Link to={'/'}>
           <Typography
