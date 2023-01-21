@@ -14,8 +14,7 @@ export const boards: Board[] = [
         id: 'b1c1',
         title: 'column 1',
         order: 1,
-        min: 0,
-        max: 0,
+        max: 2,
         tasks: [
           { id: 'b1c1t1', order: 0, text: 'task1' },
           { id: 'b1c1t2', order: 1, text: 'task2' },
@@ -26,7 +25,6 @@ export const boards: Board[] = [
         id: 'b1c2',
         title: 'column 2',
         order: 0,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b1c2t1', order: 0, text: 'task1' },
@@ -47,7 +45,6 @@ export const boards: Board[] = [
         id: 'b2c1',
         title: 'column 1',
         order: 0,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b2c1t1', order: 0, text: 'task1' },
@@ -59,7 +56,6 @@ export const boards: Board[] = [
         id: 'b2c2',
         title: 'column 2',
         order: 1,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b2c2t1', order: 0, text: 'task1' },
@@ -78,7 +74,6 @@ export const boards: Board[] = [
         id: 'b3c1',
         title: 'column 1',
         order: 0,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b3c1t1', order: 0, text: 'task1' },
@@ -90,7 +85,6 @@ export const boards: Board[] = [
         id: 'b1c2',
         title: 'column 2',
         order: 1,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b3c2t1', order: 0, text: 'task1' },
@@ -110,7 +104,6 @@ export const boards: Board[] = [
         id: 'b4c1',
         title: 'column 1',
         order: 0,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b4c1t1', order: 0, text: 'task1' },
@@ -122,7 +115,6 @@ export const boards: Board[] = [
         id: 'b4c2',
         title: 'column 2',
         order: 1,
-        min: 0,
         max: 0,
         tasks: [
           { id: 'b4c2t1', order: 0, text: 'task1' },

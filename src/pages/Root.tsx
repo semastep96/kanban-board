@@ -19,7 +19,7 @@ export const Root: FC = () => {
   return (
     <div className="App">
       <TopBar />
-      <Box sx={{ pb: '2rem', height: '100%', overflow: 'scroll' }}>
+      <Box sx={{ pb: '2rem',height: 'calc(100% - 5rem)', overflow: 'scroll' }}>
         <Outlet />
       </Box>
       <Footer />

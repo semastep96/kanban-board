@@ -8,7 +8,6 @@ interface Column {
   id: string;
   title: string;
   order: number;
-  min: number;
   max: number;
   tasks: Task[];
 }
