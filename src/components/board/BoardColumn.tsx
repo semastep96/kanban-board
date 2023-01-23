@@ -1,15 +1,17 @@
-import { Box, Button, IconButton, Paper, Typography } from '@mui/material';
+import { Box, IconButton, Paper, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { BoardTask } from './BoardTask';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Store from '../../store/Store';
+import { CreateTaskButton } from './CreateTaskButton';
+import { observer } from 'mobx-react-lite';
 
 interface BoardColumnProps {
   board: Board;
   column: Column;
 }
 
-export const BoardColumn: FC<BoardColumnProps> = ({ column, board }) => {
+export const BoardColumn: FC<BoardColumnProps> = observer(({ column, board }) => {
   const isManyTasks = column.max && column.max < column.tasks.length;
   const onDelete: React.MouseEventHandler<HTMLDivElement> = () => {
     Store.deleteColumn(board.id, column.id);
@@ -56,9 +58,7 @@ export const BoardColumn: FC<BoardColumnProps> = ({ column, board }) => {
       {column.tasks.map((task) => (
         <BoardTask task={task} key={task.id} />
       ))}
-      <Button variant="contained" sx={{ my: '0.5rem', fontSize: '10px' }}>
-        Create task
-      </Button>
+      <CreateTaskButton board={board} column={column} />
     </Paper>
   );
-};
+});

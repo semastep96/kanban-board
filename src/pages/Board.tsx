@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { BoardContainer } from '../components/board/BoardContainer';
 import { BoardTopBar } from '../components/board/BoardTopBar';
@@ -17,6 +17,10 @@ export const Board: FC = observer(() => {
   if (!board) {
     throw new Error(`Board ${boardId} not found`);
   }
+
+  useEffect(() => {
+    Store.openBoard(board.id);
+  });
 
   return (
     <BoardContainer board={board}>

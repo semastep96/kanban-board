@@ -16,4 +16,10 @@ export const BoardsHelper = {
       tasks: [],
     };
   },
+  createTask(text: string): Task {
+    return {
+      id: text + new Date().getTime() + Math.random(),
+      text,
+    };
+  },
 };

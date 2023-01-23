@@ -2,8 +2,6 @@ import { Button, DialogTitle, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
 import React, { FC } from 'react';
-import { BoardsHelper } from '../../helpers/BoardsHelper';
-import Store from '../../store/Store';
 import { CreateColumnValidationSchema } from './validation/validations';
 
 interface CreateColumnForm {
