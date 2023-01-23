@@ -4,6 +4,8 @@ import { Box, Button, IconButton, TextField, Typography } from '@mui/material';
 import { CreateBoardValidationSchema } from './validation/validations';
 import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
+import { BoardsHelper } from '../../helpers/BoardsHelper';
+import Store from '../../store/Store';
 
 export const CreateBoardForm: FC = () => {
   const navigate = useNavigate();
@@ -34,7 +36,9 @@ export const CreateBoardForm: FC = () => {
       backgroundImage: values.backgroundImage,
       columns,
     });
-    navigate('/boards');
+    const board = BoardsHelper.createBoard(values.name, values.backgroundImage, columns);
+    Store.addBoard(board);
+    navigate(`/boards/${board.id}`);
   }
 
   return (

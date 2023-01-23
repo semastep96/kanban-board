@@ -23,7 +23,15 @@ export const BoardTopBar: FC<BoardTopBarProps> = ({ board }) => {
         bgcolor: 'rgba(0, 0, 0, 0.3)',
       }}
     >
-      <Typography variant="h6" color={'white'}>
+      <Typography
+        variant="h6"
+        color={'white'}
+        sx={{
+          maxWidth: '30%',
+          maxHeight: '1.5em',
+          overflow: 'hidden'
+        }}
+      >
         {board.name}
       </Typography>
 
@@ -38,7 +46,7 @@ export const BoardTopBar: FC<BoardTopBarProps> = ({ board }) => {
             }}
           />
         </IconButton>
-        <BoardTopBarMenu />
+        <BoardTopBarMenu board={board} />
       </Box>
     </Box>
   );

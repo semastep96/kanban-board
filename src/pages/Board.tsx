@@ -1,15 +1,19 @@
-import { Box, Button } from '@mui/material';
-import ControlPointIcon from '@mui/icons-material/ControlPoint';
+import { Box } from '@mui/material';
+
 import React, { FC } from 'react';
 import { useParams } from 'react-router-dom';
 import { BoardContainer } from '../components/board/BoardContainer';
 import { BoardTopBar } from '../components/board/BoardTopBar';
-import { boards } from './Boards';
+import Store from '../store/Store';
 import { BoardColumn } from '../components/board/BoardColumn';
+import { observer } from 'mobx-react-lite';
+import { CreateColumn } from '../components/board/CreateColumn';
 
-export const Board: FC = () => {
+export const Board: FC = observer(() => {
   const { boardId } = useParams();
+  const { boards } = Store;
   const board = boards.find((board) => board.id === boardId);
+
   if (!board) {
     throw new Error(`Board ${boardId} not found`);
   }
@@ -29,13 +33,10 @@ export const Board: FC = () => {
         }}
       >
         {board.columns.map((column) => {
-          return <BoardColumn key={column.id} column={column} />;
+          return <BoardColumn key={column.id} column={column} board={board} />;
         })}
-        <Button variant="contained" sx={{ width: '272px', flexShrink: '0' }}>
-          create column
-          {<ControlPointIcon sx={{ ml: '5px', fontSize: '1.1rem' }} />}
-        </Button>
+        <CreateColumn board={board}></CreateColumn>
       </Box>
     </BoardContainer>
   );
-};
+});
