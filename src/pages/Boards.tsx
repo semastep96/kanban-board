@@ -1,6 +1,6 @@
 import { Container } from '@mui/system';
 import React, { FC } from 'react';
-import { BoardCards } from '../components/BoardCards';
+import { BoardCards } from '../components/boards/BoardCards';
 
 export const boards: Board[] = [
   {

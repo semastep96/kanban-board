@@ -18,6 +18,7 @@ import { AuthProvider } from './hoc/AuthProvider';
 import { SignUp } from './pages/SignUp';
 import { Boards } from './pages/Boards';
 import { Board } from './pages/Board';
+import { CreateBoard } from './pages/CreateBoard';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'boards/new',
-        element: <h1>Create new board page</h1>
+        element: <CreateBoard />
       },
       { path: 'boards/:boardId', element: <Board /> },
     ],

@@ -11,7 +11,7 @@ interface BoardTopBarProps {
 export const BoardTopBar: FC<BoardTopBarProps> = ({ board }) => {
   const navigate = useNavigate();
   const handleGoBack: React.MouseEventHandler<HTMLButtonElement> = () =>
-    navigate(-1);
+    navigate('/boards');
 
   return (
     <Box

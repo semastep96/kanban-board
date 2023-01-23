@@ -5,6 +5,11 @@ export const signinValidationSchema = yup.object({
   password: yup.string().required('Enter password'),
 });
 
+export const CreateBoardValidationSchema = yup.object({
+  name: yup.string().required('Enter board name'),
+  backgroundImage: yup.string().url('Enter url'),
+});
+
 export const signupValidationSchema = yup.object({
   email: yup.string().email('Enter valid email').required('Enter username'),
   username: yup.string().min(3, 'Min 3 symbols').required('Enter username'),
