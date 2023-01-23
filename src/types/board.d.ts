@@ -1,13 +1,11 @@
 interface Task {
   id: string;
-  order: number;
   text: string;
 }
 
 interface Column {
   id: string;
   title: string;
-  order: number;
   max: number;
   tasks: Task[];
 }

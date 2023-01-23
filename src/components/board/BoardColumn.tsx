@@ -2,14 +2,20 @@ import { Box, IconButton, Paper, Typography } from '@mui/material';
 import React, { FC } from 'react';
 import { BoardTask } from './BoardTask';
 import DeleteIcon from '@mui/icons-material/Delete';
+import Store from '../../store/Store';
+import { CreateTaskButton } from './CreateTaskButton';
+import { observer } from 'mobx-react-lite';
 
 interface BoardColumnProps {
+  board: Board;
   column: Column;
 }
 
-export const BoardColumn: FC<BoardColumnProps> = ({ column }) => {
+export const BoardColumn: FC<BoardColumnProps> = observer(({ column, board }) => {
   const isManyTasks = column.max && column.max < column.tasks.length;
-
+  const onDelete: React.MouseEventHandler<HTMLDivElement> = () => {
+    Store.deleteColumn(board.id, column.id);
+  };
   return (
     <Paper
       elevation={4}
@@ -28,12 +34,21 @@ export const BoardColumn: FC<BoardColumnProps> = ({ column }) => {
           justifyContent: 'space-between',
         }}
       >
-        <Typography variant="h6">{column.title}</Typography>
+        <Typography
+          variant="h6"
+          sx={{
+            maxWidth: '80%',
+            maxHeight: '3em',
+            overflow: 'hidden',
+          }}
+        >
+          {column.title}
+        </Typography>
         <Box sx={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <Typography variant="body2">
             {column.max ? `${column.tasks.length}/${column.max}` : undefined}
           </Typography>
-          <Box>
+          <Box onClick={onDelete}>
             <IconButton>
               <DeleteIcon />
             </IconButton>
@@ -43,6 +58,7 @@ export const BoardColumn: FC<BoardColumnProps> = ({ column }) => {
       {column.tasks.map((task) => (
         <BoardTask task={task} key={task.id} />
       ))}
+      <CreateTaskButton board={board} column={column} />
     </Paper>
   );
-};
+});

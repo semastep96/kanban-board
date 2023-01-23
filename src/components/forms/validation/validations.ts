@@ -10,6 +10,15 @@ export const CreateBoardValidationSchema = yup.object({
   backgroundImage: yup.string().url('Enter url'),
 });
 
+export const CreateColumnValidationSchema = yup.object({
+  title: yup.string().required('Enter column name'),
+  max: yup.number(),
+});
+
+export const CreateTaskValidationSchema = yup.object({
+  text: yup.string().required('Enter task text'),
+});
+
 export const signupValidationSchema = yup.object({
   email: yup.string().email('Enter valid email').required('Enter username'),
   username: yup.string().min(3, 'Min 3 symbols').required('Enter username'),
