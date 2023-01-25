@@ -7,4 +7,5 @@
   - React router v6
   - Material UI
   - Formik
+  - React-DND
   - js-cookie
