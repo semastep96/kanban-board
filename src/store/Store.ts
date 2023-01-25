@@ -91,7 +91,6 @@ class Store {
     const task = extracted[0];
 
     if (!dropTaskId) {
-      console.log('hre');
       dropColumn?.tasks.unshift(task);
       return;
     }
