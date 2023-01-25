@@ -19,6 +19,9 @@ import { SignUp } from './pages/SignUp';
 import { Boards } from './pages/Boards';
 import { Board } from './pages/Board';
 import { CreateBoard } from './pages/CreateBoard';
+import { DndProvider } from 'react-dnd';
+import { TouchBackend } from 'react-dnd-touch-backend';
+import { DndPreview } from './components/dnd/DndPreview';
 
 const router = createBrowserRouter([
   {
@@ -36,7 +39,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'boards/new',
-        element: <CreateBoard />
+        element: <CreateBoard />,
       },
       { path: 'boards/:boardId', element: <Board /> },
     ],
@@ -52,13 +55,16 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <ThemeProvider theme={appTheme}>
-      <AuthProvider>
-        <RouterProvider router={router} />
-      </AuthProvider>
-    </ThemeProvider>
-  </React.StrictMode>
+  <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true, delayTouchStart: 50 }}>
+    <React.StrictMode>
+      <ThemeProvider theme={appTheme}>
+        <AuthProvider>
+          <RouterProvider router={router} />
+          <DndPreview />
+        </AuthProvider>
+      </ThemeProvider>
+    </React.StrictMode>
+  </DndProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
